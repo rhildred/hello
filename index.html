@@ -2,8 +2,30 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+        <script>
+            angular.module("myApp", []).controller("myCtrl", function ($scope) {
+                $scope.aPictures = [{ url: "https://farm4.staticflickr.com/3088/2688916488_1a125cd0e7_z_d.jpg", author: "Ângela Antunes" },
+                 { url: "https://farm4.staticflickr.com/3626/3390027827_56ca221e12_z_d.jpg?zz=1", author: "Jelene Morris"}];
+                $scope.nextPicture = function () {
+                    $scope.n = $scope.n + 1;
+                    if ($scope.n >= $scope.aPictures.length) $scope.n = 0;
+                    $scope.currentPicture = $scope.aPictures[$scope.n].url;
+                    $scope.currentAuthor = $scope.aPictures[$scope.n].author;
+                };
+                $scope.n = -1;
+                $scope.nextPicture();
+            });
+        </script>
+
 </head>
-<body>
-hello! ... prototyping is fun!
+<body ng-app="myApp" ng-controller="myCtrl">
+<h1>The prototyping puppy!</h1>
+<button ng-click="nextPicture()">Next</button><br />
+        <figure>
+            <img src="{{currentPicture}}" alt="picture of puppy"/>
+            <figcaption>Picture by {{currentAuthor}}</figcaption>
+        </figure>
+
 </body>
 </html>

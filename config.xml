@@ -10,5 +10,5 @@
     <author href="https://rhildred.github.io" email="rhildred@gmail.com">
         Rich Hildred and Mobile App Class of 2015
     </author>
-    <access origin="*"/>
+    <access origin="*" />
 </widget>

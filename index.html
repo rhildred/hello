@@ -6,7 +6,7 @@
         <script>
             angular.module("myApp", []).controller("myCtrl", function ($scope) {
                 $scope.aPictures = [{ url: "images/Antunes.jpg", author: "Ângela Antunes" },
-                 { url: "images/Morris.jpg", author: "Jelene Morris"}];
+                 { url: "images/Morris.jpg", author: "Jelene Morris"},{url:"images/qJakePuppy.jpg", author:"qJake"}];
                 $scope.nextPicture = function () {
                     $scope.n = $scope.n + 1;
                     if ($scope.n >= $scope.aPictures.length) $scope.n = 0;
